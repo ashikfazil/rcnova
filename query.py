@@ -191,16 +191,3 @@ def recommend_endpoint(request: RecommendationRequest):
     recommendations = recommend_courses_per_skill(missing_skills)
     return {"recommendations": recommendations, "missing_skills": missing_skills}
 
-
-@app.get("/get_user_by_email")
-def get_user_by_email(email: str):
-    """
-    Finds a user by their email address and returns the user document.
-    """
-    user = users_collection.find_one({"email": email})
-    if not user:
-        raise HTTPException(status_code=404, detail="User with that email not found")
-    
-    # Convert ObjectId to string so it can be sent as JSON
-    user["_id"] = str(user["_id"])
-    return user
