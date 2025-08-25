@@ -7,7 +7,6 @@ import torch
 import pandas as pd
 from sentence_transformers import SentenceTransformer, util
 from transformers import pipeline
-from dotenv import get_key
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 from bson.objectid import ObjectId
