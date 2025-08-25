@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+pymongo
+transformers
+sentence-transformers
+torch
+pandas
+openpyxl
+accelerate
